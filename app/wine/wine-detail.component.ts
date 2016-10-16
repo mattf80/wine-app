@@ -2,7 +2,7 @@ import { Wine } from './../shared/models/wine.model';
 import { WineService } from './../shared/services/wine.service';
 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     templateUrl: './../../app/wine/wine-detail.component.html',
@@ -13,7 +13,10 @@ export class WineDetailComponent implements OnInit {
     
     wine: Wine;
 
-    constructor(private _route: ActivatedRoute, private _service: WineService){};
+    constructor(
+        private _route: ActivatedRoute, 
+        private _service: WineService,
+        private _router: Router){};
     
     ngOnInit() {
         //grab the slug parameter
@@ -21,5 +24,9 @@ export class WineDetailComponent implements OnInit {
         console.log(slug);
 
         this._service.getWine(slug).then(wine => this.wine = wine);
+    }
+
+    goBack(){
+        this._router.navigate(['/wines']);
     }
 }

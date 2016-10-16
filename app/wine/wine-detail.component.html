@@ -1,3 +1,5 @@
+<a class="btn btn-sm btn-info" (click)="goBack()">Go back</a>
+
 <div *ngIf="wine" class="jumbotron text-center wine-detail">
     <h1>{{wine.name}} {{wine.vintage}}</h1>
     <img [src]="wine.image" [alt]="wine.name" class="image-responsive">

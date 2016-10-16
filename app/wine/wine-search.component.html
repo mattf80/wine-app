@@ -1,0 +1,19 @@
+<form action="">
+    <div class="form-group">
+        <label for="country">Country</label>
+        <input class="form-control" type="text" id="country" name="country"
+        [(ngModel)]="model.country">
+    </div>
+    
+    <div class="form-group">
+        <label for="colour">Colour</label>
+            <select class="form-control" name="colour" id="colour"
+                required
+                [(ngModel)]="model.colour">
+                <option *ngFor="let c of colours" [value]="c">{{c}}</option>
+            </select>
+    </div>
+
+    <button type="button" class="btn btn-default" (click)="search()">Search</button>    
+</form>
+{{results}}

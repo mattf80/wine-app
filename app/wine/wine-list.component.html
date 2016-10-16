@@ -1,3 +1,5 @@
+
+
 <div class="row" *ngIf="wines">
     <div class="col-sm-2" *ngFor="let wine of wines">
         <div class="row wine-summary" [routerLink]="['/wines', wine.slug]">
@@ -7,3 +9,4 @@
         </div>
     </div>
 </div>
+
