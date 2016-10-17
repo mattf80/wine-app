@@ -1,7 +1,7 @@
-import { Wine } from './../shared/models/wine.model';
+import { Wine } from './../../shared/models/wine.model';
 import { Component, OnInit } from '@angular/core';
-import { WineService } from './../shared/services/wine.service';
-import { WineSearch } from './../shared/models/search.model';
+import { WineService } from './../../shared/services/wine.service';
+import { WineSearch } from './../../shared/models/search.model';
 
 @Component({
     moduleId: module.id,
@@ -13,7 +13,7 @@ export class WineSearchComponent implements OnInit {
     
     colours:string[];
     model = new WineSearch('France', 'Red');
-    results: Wine[];
+    results: Wine[] = new Array<Wine>();
 
     constructor(private _service: WineService) { }
 
@@ -22,8 +22,10 @@ export class WineSearchComponent implements OnInit {
     }
 
     search() {
-        this._service.wineSearch(this.model.country, this.model.colour)
-            .then(results => this.results = results);
+        this._service.getWines().then(wines => this.results = wines);
+        console.log(this.results);
+       // this._service.wineSearch(this.model.country, this.model.colour)
+       //     .then(results => this.results = results);
         
     }
 

@@ -1,12 +1,12 @@
-import { Wine } from './../shared/models/wine.model';
-import { WineService } from './../shared/services/wine.service';
+import { Wine } from './../../shared/models/wine.model';
+import { WineService } from './../../shared/services/wine.service';
 
 import { Component, OnInit } from '@angular/core';
 
 
 @Component({
     moduleId: module.id,
-    selector: 'wine-list',
+    //selector: 'wine-list',
     templateUrl: 'wine-list.component.html',
     styleUrls: ['wine-list.component.css']
 })

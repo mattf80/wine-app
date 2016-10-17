@@ -1,0 +1,8 @@
+<h3>Search results</h3>
+<div class="wines" *ngIf="wines">
+    <div class="wine row" *ngFor="let wine of wines" [routerLink]="['/wines', wine.slug]">
+        <div class="name col-sm-10"><strong>{{wine.name}}</strong></div>
+        <div class="vintage col-sm-2"><strong>{{wine.vintage}}</strong></div>
+        <div class="short-desc col-sm-10">{{wine.shortDesc}}</div>
+    </div>
+</div>

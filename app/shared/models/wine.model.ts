@@ -7,7 +7,8 @@ export class Wine {
     public country: string,
     public colour: string,
     public vintage: number,
-    public image: string){        
+    public image: string,
+    public shortDesc: string){        
     }
 
     get slug(){

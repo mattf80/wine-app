@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { WineSearchComponent } from './wine-search.component';
 
 @Component({
     moduleId: module.id,

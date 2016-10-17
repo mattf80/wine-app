@@ -1,12 +1,12 @@
-import { Wine } from './../shared/models/wine.model';
-import { WineService } from './../shared/services/wine.service';
+import { Wine } from './../../shared/models/wine.model';
+import { WineService } from './../../shared/services/wine.service';
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-    templateUrl: './../../app/wine/wine-detail.component.html',
-    styleUrls: ['./../../app/wine/wine-detail.component.css']
+    templateUrl: './../../app/wine/wine-detail/wine-detail.component.html',
+    styleUrls: ['./../../app/wine/wine-detail/wine-detail.component.css']
 })
 
 export class WineDetailComponent implements OnInit {

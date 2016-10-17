@@ -1,4 +1,4 @@
-<form action="">
+<form #form="ngForm" (ngSubmit)="search()">
     <div class="form-group">
         <label for="country">Country</label>
         <input class="form-control" type="text" id="country" name="country"
@@ -14,6 +14,8 @@
             </select>
     </div>
 
-    <button type="button" class="btn btn-default" (click)="search()">Search</button>    
+    <button type="submit" class="btn btn-default">Search</button>    
 </form>
-{{results}}
+
+<button type="button" class="btn btn-primary btn-large"
+    (click)="search()">Get wines</button>

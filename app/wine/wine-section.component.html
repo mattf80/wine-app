@@ -1,6 +1,9 @@
-<h2>Search and browse for wines and tasting notes!</h2>
+<a routerLink="/wines/list" routerLinkActive="active">Wine List</a>
+<a routerLink="/wines/add" routerLinkActive="active">Add</a>
 
 <div class="col-sm-3">
+    <button class="btn btn-default btn-lg btn block"
+    [routerLink]="['/wines/add']">Add Wine</button>
     <wine-search></wine-search>
 </div>
 
