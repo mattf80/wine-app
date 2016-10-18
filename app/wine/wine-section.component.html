@@ -1,14 +1,14 @@
-<a routerLink="/wines/list" routerLinkActive="active">Wine List</a>
-<a routerLink="/wines/add" routerLinkActive="active">Add</a>
-
+<ul class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Wines</a></li>
+  <li class="active">Add wine</li>
+</ul>
 <div class="col-sm-3">
-    <button class="btn btn-default btn-lg btn block"
-    [routerLink]="['/wines/add']">Add Wine</button>
-    <wine-search></wine-search>
+
 </div>
 
 <div class="col-sm-8">
-    <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 </div>
 
 
