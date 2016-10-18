@@ -4,14 +4,15 @@ import { Wine } from './../../shared/models/wine.model';
 
 @Component({
     moduleId: module.id,
-    //selector: 'wine-form',
-    templateUrl: 'wine-form.component.html'
-    //styleUrls: ['wine-form.component.css']
+    selector: 'wine-form',
+    templateUrl: 'wine-form.component.html',
+    styleUrls: ['wine-form.component.css']
 })
 export class WineFormComponent implements OnInit {
 
     colours:string[];
-    newWine: Wine = new Wine(0,'','','',0,'','')
+    newWine: Wine = new Wine(0,'','','',0,'','');
+    active: boolean = true;
 
     constructor(private _service: WineService) { }
 
@@ -21,6 +22,10 @@ export class WineFormComponent implements OnInit {
 
     onSubmit(){
         console.log(this.newWine);
+
+        this.newWine = new Wine(0,'','','',0,'','');
+        this.active = false;
+        setTimeout(() => this.active = true, 0)
     }
 
     get diagnostic() { return JSON.stringify(this.newWine); }

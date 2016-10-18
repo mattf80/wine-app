@@ -27,6 +27,6 @@ export class WineDetailComponent implements OnInit {
     }
 
     goBack(){
-        this._router.navigate(['/wines']);
+        this._router.navigate(['/wines/list']);
     }
 }

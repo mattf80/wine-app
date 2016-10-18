@@ -1,8 +1,8 @@
-<h3>Search results</h3>
-<div class="wines" *ngIf="wines">
-    <div class="wine row" *ngFor="let wine of wines" [routerLink]="['/wines', wine.slug]">
-        <div class="name col-sm-10"><strong>{{wine.name}}</strong></div>
-        <div class="vintage col-sm-2"><strong>{{wine.vintage}}</strong></div>
-        <div class="short-desc col-sm-10">{{wine.shortDesc}}</div>
-    </div>
+<h3>Three randomly chosen wines from the database</h3>
+
+<div class="list-group">
+  <a class="list-group-item" *ngFor="let wine of wines" [routerLink]="['/wines', wine.slug]">
+    <h4 class="list-group-item-heading">{{wine.name}} {{wine.vintage}}</h4>
+    <p class="list-group-item-text">{{wine.shortDesc}}</p>
+  </a>
 </div>

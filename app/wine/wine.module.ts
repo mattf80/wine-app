@@ -1,8 +1,7 @@
+import { wineSectionRouting } from './wine-section.routes';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { WineSectionRoutingModule } from './wine-section-routing.module';
 
 import { WineListComponent } from './../wine/wine-list/wine-list.component';
 import { WineDetailComponent } from './../wine/wine-detail/wine-detail.component';
@@ -16,7 +15,7 @@ import { WineFormComponent } from './wine-form/wine-form.component';
     imports: [
         CommonModule,
         FormsModule,
-        WineSectionRoutingModule
+        wineSectionRouting
     ],
     declarations: [
         WineListComponent,

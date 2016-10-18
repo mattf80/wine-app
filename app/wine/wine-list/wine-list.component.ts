@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    //selector: 'wine-list',
-    templateUrl: 'wine-list.component.html',
-    styleUrls: ['wine-list.component.css']
+    selector: 'wine-list',
+    templateUrl: 'wine-list.component.html'
+    //styleUrls: ['wine-list.component.css']
 })
 export class WineListComponent implements OnInit {
 
