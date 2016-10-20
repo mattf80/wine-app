@@ -22,7 +22,7 @@ export class WineFormComponent implements OnInit {
     //testing only
     wines: Wine[];
 
-    newWine: Wine = new Wine(0, '', '', '', '', 0, '', '');
+    newWine: Wine = new Wine(0, '', '', '', '', 0, '', '',[]);
     active: boolean = true;
 
     constructor(private _wineService: WineService, private _countryService: CountryService) { }
@@ -59,7 +59,7 @@ export class WineFormComponent implements OnInit {
 
         this._wineService.create(this.newWine)
             .then(wine => {
-                this.newWine = new Wine(0, '', '', '', '', 0, '', '');
+                this.newWine = new Wine(0, '', '', '', '', 0, '', '',[]);
                 this.active = false;
                 setTimeout(() => this.active = true, 0)
             });

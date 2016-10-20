@@ -13,4 +13,13 @@ export class WineSearchService {
                .get(`app/wines/?name=${term}`)
                .map((r: Response) => r.json().data as Wine[]);
   }
+
+    advancedSearch(colour?: string, country?: string): Observable<Wine[]> {
+    
+    return this.http
+               .get(`app/wines/?colour=${colour}&country=${country}`)
+               .map((r: Response) => r.json().data as Wine[]);
+  }
+
+
 }

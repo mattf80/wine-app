@@ -1,3 +1,6 @@
+import { WineBrowseComponent } from './../wine-browse/wine-browse.component';
+import { Region } from './../../shared/models/region.model';
+import { Country } from './../../shared/models/country.model';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Wine } from './../../shared/models/wine.model';
 import { WineSearchService } from './../../shared/services/wine-search.service';
@@ -6,6 +9,8 @@ import { Router }            from '@angular/router';
 import { Observable }        from 'rxjs/Observable';
 import { Subject }           from 'rxjs/Subject';
 import { Jsonp } from '@angular/http';
+
+
 
 @Component({
   moduleId: module.id,
@@ -16,8 +21,13 @@ import { Jsonp } from '@angular/http';
 })
 export class WineSearchComponent implements OnInit {
 
+  //quick search
   wines: Observable<Wine[]>;
   searchTerms = new Subject<string>();
+
+  //browse
+    countries: Country[];
+    regions: Region[];
 
   constructor(
     private wineSearchService: WineSearchService,

@@ -1,9 +1,7 @@
 import { InMemoryDataService } from './in-memory-data.service';
 import { HttpModule, Http, Headers } from '@angular/http';
-import { WINES } from './mock-data';
 import { Wine } from './../models/wine.model';
 import { Injectable } from '@angular/core';
-
 
 import 'rxjs/add/operator/toPromise';
 
@@ -37,8 +35,12 @@ export class WineService {
        // return Promise.resolve(WINES).then(wines => wines.find(wine => wine.slug === slug));
     }
 
-    wineSearch(country: string, colour: string) {
-        return Promise.resolve(WINES).then(wines => wines.filter(wine => wine.country === country && wine.colour === colour));
+    wineSearch(obj: any): Promise<Wine[]>{
+        console.log(obj.colour, obj.country);
+        let x = this.getWines()
+            .then(wines => wines.filter(wine => wine.colour === obj.colour && wine.country === obj.country));
+        console.log(x);
+        return x;
     }
 
     //get colours

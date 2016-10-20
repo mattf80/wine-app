@@ -1,19 +1,53 @@
-<a class="btn btn-sm btn-info" (click)="goBack()">Go back</a>
+<div class="col-md-8">
+	<div class="pull-left" *ngIf="wine">
+		<h3>{{wine.name}} {{wine.vintage}}</h3>
+	</div>
+
+	<div class="pull-right">
+		<a class="btn btn-sm btn-info" (click)="goBack()">Go back</a>
+	</div>
+	<div class="clear-fix"></div>
+</div>
+
+
 
 <div *ngIf="wine">
 	<div class="col-md-8">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h3 class="panel-title">{{wine.name}} {{wine.vintage}}</h3>
+				<h3 class="panel-title">Wine details</h3>
 			</div>
 			<div class="panel-body">
+				<ul class="breadcrumb">
+					<li>{{wine.country}}</li>
+					<li>{{wine.region}}</li>
+				</ul>
 				{{wine.shortDesc}}
 			</div>
 		</div>
+		<div>			
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title pull-left">Tasting notes</h3>
+					<div class="panel-title pull-right">{{wine.tastingNotes.length}}</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="panel-body">
+					<ul class="list-group">
+						<li class="list-group-item" *ngFor="let note of wine.tastingNotes">
+							<span class="badge">{{note.score}}/10</span> {{note.notes}}
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="col-md-4">
-		<img [src]="wine.img" [alt]="wine.name" class="image-responsive">
+	<div class="col-md-4 panel panel-default">
+		<div class="panel-body wine-detail">
+			<img [src]="wine.img" [alt]="wine.name" class="center-block">
+		</div>
 	</div>
+
 
 
 </div>

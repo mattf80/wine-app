@@ -17,6 +17,7 @@ import { WineDetailComponent } from './../wine/wine-detail/wine-detail.component
 import { Wine } from './../shared/models/wine.model';
 import { WineService } from './../shared/services/wine.service';
 import { WineSearchComponent } from './wine-search/wine-search.component';
+import { WineBrowseComponent } from './wine-browse/wine-browse.component';
 import { WineSectionComponent } from './wine-section.component';
 import { WineFormComponent } from './wine-form/wine-form.component';
 
@@ -34,6 +35,7 @@ import { WineFormComponent } from './wine-form/wine-form.component';
         WineDetailComponent,
         WineSectionComponent,
         WineSearchComponent,
+        WineBrowseComponent,
         WineFormComponent,
         Typeahead
     ],

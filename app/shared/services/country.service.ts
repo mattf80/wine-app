@@ -1,4 +1,3 @@
-import { COUNTRIES, REGIONS } from './mock-data';
 import { Injectable } from '@angular/core';
 import { Region } from './../models/region.model';
 import { Country } from './../models/country.model';

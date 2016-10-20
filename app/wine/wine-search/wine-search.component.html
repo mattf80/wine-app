@@ -3,7 +3,9 @@
 	<input class="form-control" type="text" id="search-box" #searchBox (keyup)="search(searchBox.value)" />
 	<div class="list-group">
 		<div *ngFor="let wine of wines | async" (click)="gotoDetail(wine)" class="search-result">
-			<a class="list-group-item">{{wine.name}}</a> 
+			<a class="list-group-item">{{wine.name}}</a>
 		</div>
 	</div>
 </div>
+
+<wine-browse></wine-browse>

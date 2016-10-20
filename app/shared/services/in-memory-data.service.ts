@@ -1,18 +1,22 @@
+import { wineSectionRouting } from './../../wine/wine-section.routes';
 
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     let wines = [
       {id: 1, name: 'Chateau Latour', country: 'France', region: 'Bordeaux', colour: 'Red', vintage: 1995,
-      img:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/ChateauLatour03.jpg/100px-ChateauLatour03.jpg', shortDesc: 'Not bad for French plonk', tastingNotes:[
-        {id: 1, wineId: 1, notes: 'Tasting note text',score: 8, dateAdded: '2012-06-09'}
+      img:'http://www.oenoselection.com/wp-content/uploads/2015/01/chateau-latour-grand-cru-classe.png', shortDesc: 'Medoc first growth from the village of Pauillac.', tastingNotes:[
+        {id: 1, wineId: 1, notes: 'Tasting note text',score: 8, dateAdded: '2012-06-09'},
+        {id: 2, wineId: 1, notes: 'Very nice wine, plenty of years ahead of it.',score: 8.5, dateAdded: '2014-02-20'},
+        {id: 3, wineId: 1, notes: 'Exercitation aliqua cillum Lorem elit adipisicing fugiat est exercitation dolor.',score: 9, dateAdded: '2012-06-09'},
+        {id: 4, wineId: 1, notes: 'Nostrud anim nisi incididunt consectetur deserunt adipisicing.',score: 10, dateAdded: '2012-06-09'}
       ]},
       {id: 2, name: 'Puligny Montrachet', country: 'France', region: 'Burgundy', colour: 'White', vintage: 2010,
-      img:'', shortDesc: 'Nice white wine', tastingNotes:[
+      img:'http://www.chateau-meursault.com/wp-content/uploads/2015/10/blanc_puligny-montrachet_champ_canet_premier_cru.png', shortDesc: 'One of the top vineyards in Burgundy for white wine.', tastingNotes:[
 
       ]},
-            {id: 1, name: 'Chateau Margaux', country: 'France', region: 'Bordeaux', colour: 'Red', vintage: 1982,
-      img:'', shortDesc: 'Past its best but fairly pleasant.', tastingNotes: [
+            {id: 3, name: 'Chateau Margaux', country: 'France', region: 'Bordeaux', colour: 'Red', vintage: 1982,
+      img:'http://www.shopforwine.net.au/images/wines/1597/1392970146_1370931927_Ch%C3%83%C2%A2teau_Margaux.png', shortDesc: 'Medoc first growth based in Margaux towards the south of Bordeaux.', tastingNotes: [
 
       ]}
     ];
