@@ -1,21 +1,9 @@
-<form #form="ngForm" (ngSubmit)="search()">
-    <div class="form-group">
-        <label for="country">Country</label>
-        <input class="form-control" type="text" id="country" name="country"
-        [(ngModel)]="model.country">
-    </div>
-    
-    <div class="form-group">
-        <label for="colour">Colour</label>
-            <select class="form-control" name="colour" id="colour"
-                required
-                [(ngModel)]="model.colour">
-                <option *ngFor="let c of colours" [value]="c">{{c}}</option>
-            </select>
-    </div>
-
-    <button type="submit" class="btn btn-default">Search</button>    
-</form>
-
-<button type="button" class="btn btn-primary btn-large"
-    (click)="search()">Get wines</button>
+<div id="search-component">
+	<h4>Wine Search</h4>
+	<input class="form-control" type="text" id="search-box" #searchBox (keyup)="search(searchBox.value)" />
+	<div class="list-group">
+		<div *ngFor="let wine of wines | async" (click)="gotoDetail(wine)" class="search-result">
+			<a class="list-group-item">{{wine.name}}</a> 
+		</div>
+	</div>
+</div>

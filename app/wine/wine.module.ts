@@ -1,7 +1,16 @@
+import { CountryService } from './../shared/services/country.service';
+import { Typeahead } from './ng2-typeahead';
 import { wineSectionRouting } from './wine-section.routes';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
+
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api/in-memory-web-api.module';
+import { InMemoryDataService }  from './../shared/services/in-memory-data.service';
+
+//import './../rxjs-extensions';
+
 
 import { WineListComponent } from './../wine/wine-list/wine-list.component';
 import { WineDetailComponent } from './../wine/wine-detail/wine-detail.component';
@@ -15,6 +24,9 @@ import { WineFormComponent } from './wine-form/wine-form.component';
     imports: [
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
+        HttpModule,
+        InMemoryWebApiModule.forRoot(InMemoryDataService),
         wineSectionRouting
     ],
     declarations: [
@@ -22,11 +34,15 @@ import { WineFormComponent } from './wine-form/wine-form.component';
         WineDetailComponent,
         WineSectionComponent,
         WineSearchComponent,
-        WineFormComponent
+        WineFormComponent,
+        Typeahead
     ],
     providers: [
-        WineService
+        WineService,
+        CountryService
     ]
 })
 
-export class WineModule {}
+export class WineModule {
+
+}

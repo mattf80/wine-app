@@ -7,9 +7,10 @@ import { ModuleWithProviders } from '@angular/core';
 
 
 export const routes: Routes = [
+    { path: 'wines', component: WineSectionComponent},
     { path: 'wines/list', component: WineListComponent },
     { path: 'wines/add', component: WineFormComponent },
-    { path: 'wines/:slug', component: WineDetailComponent}
+    { path: 'wines/detail/:id', component: WineDetailComponent}
 ];
 
 export const wineSectionRouting: ModuleWithProviders = RouterModule.forChild(routes);

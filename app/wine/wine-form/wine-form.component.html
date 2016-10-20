@@ -1,6 +1,5 @@
 
 <div class="col-sm-9">
-	<button type="button" class="btn btn-info" [routerLink]="['/wines']">Go back</button>
 	<form class="form-horizontal" novalidate #form="ngForm" (ngSubmit)="onSubmit()" *ngIf="active">
 		<fieldset>
 			<legend>Wine details</legend>
@@ -24,11 +23,30 @@
 			<div class="form-group" [ngClass]="{'has-error': country.invalid && country.touched}">
 				<label for="country" class="col-sm-3 control-label">Country</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" #country='ngModel' id="country" name="country" placeholder="Start typing a country name"
-						[(ngModel)]="newWine.country" required>
+					<!--<input type="text" class="form-control" #country='ngModel' id="country" name="country" placeholder="Start typing a country name"
+						[(ngModel)]="newWine.country" required>-->
+					<select class="form-control" name="country" #country='ngModel' id="country" required 
+					[(ngModel)]="newWine.country"
+					(change)="onCountryChange($event.target.value)">
+                        <option *ngFor="let c of countries" [value]="c.id">{{c.name}}</option>
+                    </select>
 					<span class="help-block" *ngIf="country.invalid && country.touched">Country is required.</span>
 				</div>
 			</div>
+			<div class="form-group">
+				<label for="region" class="col-sm-3 control-label">Region</label>
+				<div class="col-sm-9">
+					<!--<input type="text" class="form-control" #country='ngModel' id="country" name="country" placeholder="Start typing a country name"
+						[(ngModel)]="newWine.country" required>-->
+					<select class="form-control" name="region" #region='ngModel' id="region" 
+					[(ngModel)]="newWine.region">
+                        <option *ngFor="let r of regions" [value]="r.id">{{r.name}}</option>
+                    </select>
+				</div>
+			</div>
+
+<!--TO DO NEXT - REGOIN BASED ON COUNTRY CHOSEN-->
+
 			<div class="form-group" [ngClass]="{'has-error': colour.invalid && colour.touched}">
 				<label for="colour" class="col-sm-3 control-label">Colour</label>
 				<div class="col-sm-9">

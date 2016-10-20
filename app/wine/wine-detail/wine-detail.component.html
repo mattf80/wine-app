@@ -1,6 +1,19 @@
 <a class="btn btn-sm btn-info" (click)="goBack()">Go back</a>
 
-<div *ngIf="wine" class="jumbotron text-center wine-detail">
-    <h1>{{wine.name}} {{wine.vintage}}</h1>
-    <img [src]="wine.image" [alt]="wine.name" class="image-responsive">
+<div *ngIf="wine">
+	<div class="col-md-8">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">{{wine.name}} {{wine.vintage}}</h3>
+			</div>
+			<div class="panel-body">
+				{{wine.shortDesc}}
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<img [src]="wine.img" [alt]="wine.name" class="image-responsive">
+	</div>
+
+
 </div>

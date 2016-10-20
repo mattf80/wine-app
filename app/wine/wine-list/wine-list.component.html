@@ -1,7 +1,7 @@
 <h3>Three randomly chosen wines from the database</h3>
 
 <div class="list-group">
-  <a class="list-group-item" *ngFor="let wine of wines" [routerLink]="['/wines', wine.slug]">
+  <a class="list-group-item" *ngFor="let wine of wines" [routerLink]="['/wines/detail', wine.id]">
     <h4 class="list-group-item-heading">{{wine.name}} {{wine.vintage}}</h4>
     <p class="list-group-item-text">{{wine.shortDesc}}</p>
   </a>
